@@ -361,3 +361,24 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# ── Python ─────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.so
+.env
+.venv
+.ideas/
+# ── Jupyter ────────────────────────────────────────
+.ipynb_checkpoints/
+# ── Data, modelos, artefactos ──────────────────────
+/data/
+/models/
+/dvc_tmp/
+/*.dvc
+# ── Logs & misc ────────────────────────────────────
+*.log
+*.out
+.DS_Store
+
+

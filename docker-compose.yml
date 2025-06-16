@@ -1,0 +1,24 @@
+services:
+  omnia-ia:
+    build: ./docker
+    image: omnia/ia-workflows:dev
+    volumes:
+      - type: bind
+        source: D:/Proyectos/omnia-ia-workflows
+        target: /workspace
+      - type: bind
+        source: D:/Datos_AI
+        target: /data
+      - type: bind
+        source: D:/Modelos_AI
+        target: /models
+    working_dir: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    ipc: host
+    environment:
+      - HF_HOME=/models/hf_cache
+      - PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:256
